@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/estilos.css" />
+    <link rel="stylesheet" href="/assets/css/display.css" />
+    <link rel="stylesheet" href="/assets/css/productos.css" />
+    <title>Alta de Productos</title>
+  </head>
+  <body class="dp-flex ai-c jc-c">
+    <main class="dp-flex ai-c jc-c fd-c">
+      <h1>Alta de Productos</h1>
+      <form
+        id="product"
+        class="dp-flex ai-c jc-sa fd-c"
+        action=""
+        method="POST"
+      >
+        <div class="form-label-container dp-flex ai-c jc-c fd-c">
+          <div class="form-id-name-container dp-flex ai-c jc-sb">
+            <label for="identifier"></label>
+            <input
+              type="text"
+              id="identifier"
+              name="productId"
+              placeholder="ID"
+              required
+            />
+            <label for="name"></label>
+            <input
+              type="text"
+              id="name"
+              name="productName"
+              placeholder="Nombre"
+              required
+            />
+          </div>
+          <label for="image"></label>
+          <input
+            title="Imagen"
+            type="file"
+            accept=".jpg, .jpeg, .png"
+            id="image"
+            name="productImg"
+          />
+          <label for="description"></label>
+          <textarea
+            type="text"
+            id="description"
+            name="productDescription"
+            placeholder="Descripción"
+          ></textarea>
+          <div class="form-price-category-container dp-flex ai-c jc-sb">
+            <label for="category"></label>
+            <select name="productCategory" id="category" required>
+              <option value="" disabled selected>Seleccionar categoría</option>
+              <option value="Categoria1">Categoría 1</option>
+              <option value="Categoria2">Categoría 2</option>
+              <option value="Categoria3">Categoría 3</option>
+            </select>
+            <label for="price"></label>
+            <input
+              type="number"
+              id="price"
+              name="productPrice"
+              placeholder="Precio"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-btn-container dp-flex ai-c jc-sa">
+          <input type="button" value="Cancelar" />
+          <input id="btn-submit" type="submit" value="Guardar" />
+        </div>
+      </form>
+      <span>Gever Rodríguez</span>
+    </main>
+    <div id="bg-disable" class="inactive dp-flex ai-c jc-c">
+      <div id="alert-msg" class="dp-flex ai-c jc-sa fd-c">
+        <h2>Ingrese un ID</h2>
+        <span id="name-alert">Gever Rodriguez</span>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="Anonymous"
+    ></script>
+    <script src="/assets/js/validaciones.js"></script>
+  </body>
+</html>

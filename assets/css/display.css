@@ -1,0 +1,31 @@
+/*Display*/
+
+.dp-flex {
+  display: flex;
+}
+
+.fd-c {
+  flex-direction: column;
+}
+
+.ai-c {
+  align-items: center;
+}
+
+.jc-c {
+  justify-content: center;
+}
+
+.jc-sa {
+  justify-content: space-around;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+/* .inactive {
+  display: none;
+} */
+
+/*End Display*/

@@ -1,0 +1,90 @@
+body {
+  height: 100vh;
+  place-content: center;
+  overflow: hidden;
+}
+
+main {
+  box-shadow: 0 0 0.5rem var(--white-shadow), 0 0 1.5rem var(--white-shadow),
+    0 0 5rem var(--white-shadow);
+  border-radius: 2rem;
+  padding: 4rem 3rem;
+  -webkit-box-reflect: below 0.1rem
+    linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+}
+
+h1 {
+  font-size: 3.6rem;
+  text-transform: uppercase;
+  margin: 1rem 0;
+}
+
+/*Form*/
+
+form {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.form-label-container {
+  width: inherit;
+  padding: 0 1rem;
+}
+
+.form-label-container input {
+  margin: 1.5rem 0;
+  font-size: 2.2rem;
+  padding: 1rem 0.3rem;
+  border-radius: 1.5rem;
+  border: none;
+  box-shadow: 0 0 0.5rem var(--white-shadow), 0 0 1.5rem var(--white-shadow);
+  width: inherit;
+}
+
+input {
+  font-size: 1.8rem;
+}
+
+.form-btn-container {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.form-btn-container input {
+  font-size: 2rem;
+  padding: 1.2rem 0;
+  width: 14rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+}
+
+.form-btn-container input:hover {
+  text-shadow: 0 0 5rem var(--white-shadow);
+}
+
+.form-btn-container input:nth-child(1) {
+  background: var(--btn-color-red);
+}
+
+.form-btn-container input:nth-child(1):hover {
+  box-shadow: 0 0 0.5rem var(--btn-color-red), 0 0 2rem var(--btn-color-red),
+    0 0 5rem var(--white-shadow);
+}
+
+.form-btn-container input:nth-child(2) {
+  background: var(--btn-color-blue);
+}
+
+.form-btn-container input:nth-child(2):hover {
+  box-shadow: 0 0 0.5rem var(--btn-color-blue), 0 0 2rem var(--btn-color-blue),
+    0 0 5rem var(--white-shadow);
+}
+
+/*End Form*/
+
+span {
+  font-size: 1.6rem;
+  font-style: italic;
+}

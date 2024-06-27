@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/estilos.css" />
+    <link rel="stylesheet" href="/assets/css/display.css" />
+    <link rel="stylesheet" href="/assets/css/categorias.css" />
+    <title>Alta de Categorias</title>
+  </head>
+  <body class="dp-flex ai-c jc-c">
+    <main class="dp-flex ai-c jc-c fd-c">
+      <h1>Alta de Categorias</h1>
+      <form class="dp-flex ai-c jc-sa fd-c" action="" method="POST">
+        <div class="form-label-container dp-flex ai-c jc-c fd-c">
+          <label for="identifier"></label>
+          <input
+            type="text"
+            id="identifier"
+            name="categoryId"
+            placeholder="ID"
+            required
+          />
+          <label for="name"></label>
+          <input
+            type="text"
+            id="name"
+            name="categoryName"
+            placeholder="Nombre"
+            required
+          />
+        </div>
+        <div class="form-btn-container dp-flex ai-c jc-sa">
+          <input type="button" value="Cancelar" />
+          <input id="btn-submit" type="submit" value="Guardar" />
+        </div>
+      </form>
+      <span>Gever Rodríguez</span>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="Anonymous"
+    ></script>
+    <script src="/assets/js/validaciones.js"></script>
+  </body>
+</html>
