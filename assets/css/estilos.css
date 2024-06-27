@@ -1,6 +1,7 @@
 :root {
     color-scheme: light dark;
     --white-shadow: rgba(255, 255, 255, 0.2);
+    --disabled-bg: rgba(254, 222, 222, 0.679);
     --btn-color-blue: rgb(78, 78, 255);
     --btn-color-red: rgb(243, 78, 78);
 }
