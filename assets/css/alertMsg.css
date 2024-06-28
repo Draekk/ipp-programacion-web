@@ -1,0 +1,41 @@
+/*Alert Message*/
+
+#bg-disable {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--disabled-bg);
+}
+
+#alert-msg {
+  border: 0.3rem solid red;
+  border-radius: 2rem;
+  min-width: 25rem;
+  padding: 2rem;
+  background-color: var(--btn-color-red);
+  box-shadow: 0 0 1rem 0.3rem var(--btn-color-red),
+    0 0 3rem var(--btn-color-red), 0 0 10rem var(--btn-color-red);
+}
+
+#alert-msg h2 {
+  font-size: 2rem;
+}
+
+#alert-msg ul {
+  margin: 2rem;
+  width: 60%;
+}
+
+#alert-msg ul li {
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#alert-msg span {
+  text-decoration: underline;;
+}
+
+/*End Alert Message*/
