@@ -18,9 +18,9 @@ class Database {
 
   public function findAll($table) {
     try {
-      $query = $this->conn->prepare("SELECT * FROM :table");
-      $query->bindParam(':table', $table);
-      return $query->fetchAll(PDO::FETCH_ASSOC);
+      $query = $this->conn->query("SELECT * FROM " . $table);
+      $result = $query->fetchAll(PDO::FETCH_ASSOC);
+      return $result;
     } catch (Exception $ex) {
       throw new Exception($ex->getMessage());
     }
