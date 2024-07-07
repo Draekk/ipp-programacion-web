@@ -16,6 +16,19 @@ class Database {
     return $this->conn;
   }
 
+  public function save($data) {
+    try {
+      if($data instanceof Categoria) {
+        $insert = $this->conn->prepare("INSERT INTO categorias (identificador, nombre) VALUES (:id, :name)");
+        $insert->bindParam(':id', $data->getId());
+        $insert->bindParam(':name', $data->getName());
+        $insert->execute();
+      }
+    } catch(Exception $ex) {
+      throw new Exception($ex->getMessage());
+    }
+  }
+
 
 }
 

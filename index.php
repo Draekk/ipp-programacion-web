@@ -67,6 +67,7 @@
   // } else {
   //   echo "<h1>Desconectado</h1>";
   // }
+
   
   ?>
   <a href="/backend/views/categorias.html">Categorias</a>
