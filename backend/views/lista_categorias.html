@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/estilos.css" />
+    <link rel="stylesheet" href="/assets/css/display.css" />
+    <title>Lista Categorias</title>
+  </head>
+  <body>
+    <header>
+      <nav id="nav-bar" class="dp-flex ai-c jc-sb">
+        <h1>Lista de Categorias</h1>
+        <ul class="dp-flex">
+          <li><a href="/backend/views/categorias.html">Categorias</a></li>
+          <li><a href="/backend/categorias.php">Lista Categorias</a></li>
+          <li><a href="/backend/views/productos.html">Productos</a></li>
+          <li><a href="/backend/productos.php">Lista Productos</a></li>
+        </ul>
+      </nav>
+    </header>
+    <table>
+      <thead>
+        <tr>
+          <th>Identificador</th>
+          <th>Nombre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php foreach($categories as $category):?>
+        <tr>
+          <td><?=$category['identificador']?></td>
+          <td><?=$category['nombre']?></td>
+        </tr>
+        <?php endforeach;?>
+      </tbody>
+    </table>
+  </body>
+</html>

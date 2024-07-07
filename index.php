@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/estilos.css">
+  <link rel="stylesheet" href="/assets/css/display.css">
+  <link rel="stylesheet" href="/assets/css/index.css">
   <title>Index.php</title>
 </head>
 <body>
@@ -70,9 +73,19 @@
 
   
   ?>
-  <a href="/backend/views/categorias.html">Categorias</a>
-  <a href="/backend/categorias.php">Lista Categorias</a>
-  <a href="/backend/views/productos.html">Productos</a>
-  <button>Conectar</button>
+  <header>
+    <nav id="nav-bar" class="dp-flex ai-c jc-sb">
+      <h1>Tu Empresa</h1>
+      <ul class="dp-flex">
+        <li><a href="/backend/views/categorias.html">Categorias</a></li>
+        <li><a href="/backend/categorias.php">Lista Categorias</a></li>
+        <li><a href="/backend/views/productos.html">Productos</a></li>
+        <li><a href="/backend/productos.php">Lista Productos</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  
+  
 </body>
 </html>
