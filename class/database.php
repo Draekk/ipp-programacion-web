@@ -2,7 +2,7 @@
 
 class Database {
 
-  public $conn;
+  private $conn;
 
   public function __construct($driver, $host, $user, $pass, $db) {
     try {
@@ -16,13 +16,23 @@ class Database {
     return $this->conn;
   }
 
+  public function findAll($table) {
+    try {
+      $query = $this->conn->prepare("SELECT * FROM :table");
+      $query->bindParam(':table', $table);
+      return $query->fetchAll(PDO::FETCH_ASSOC);
+    } catch (Exception $ex) {
+      throw new Exception($ex->getMessage());
+    }
+  }
+
   public function save($data) {
     try {
       if($data instanceof Categoria) {
-        $insert = $this->conn->prepare("INSERT INTO categorias (identificador, nombre) VALUES (:id, :name)");
-        $insert->bindParam(':id', $data->getId());
-        $insert->bindParam(':name', $data->getName());
-        $insert->execute();
+        $query = $this->conn->prepare("INSERT INTO categorias (identificador, nombre) VALUES (:id, :name)");
+        $query->bindParam(':id', $data->getId());
+        $query->bindParam(':name', $data->getName());
+        $query->execute();
       }
     } catch(Exception $ex) {
       throw new Exception($ex->getMessage());

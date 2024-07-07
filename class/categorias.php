@@ -5,8 +5,9 @@ class Categoria {
   private $id;
   private $name;
 
-  //Constructor
-  public function __construct($id, $name) {
+  //Constructors
+
+  public function __construct($id = null, $name = null) {
     $this->id = $id;
     $this->name = $name;
   }

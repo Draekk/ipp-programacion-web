@@ -71,6 +71,7 @@
   
   ?>
   <a href="/backend/views/categorias.html">Categorias</a>
+  <a href="/backend/views/lista_categorias.html">Lista Categorias</a>
   <a href="/backend/views/productos.html">Productos</a>
   <button>Conectar</button>
 </body>
