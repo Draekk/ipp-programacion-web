@@ -33,6 +33,15 @@ class Database {
         $query->bindParam(':id', $data->getId());
         $query->bindParam(':name', $data->getName());
         $query->execute();
+      } else {
+        $query = $this->conn->prepare("INSERT INTO productos (identificador, nombre, imagen, descripcion, precio, categoria) VALUES (:id, :name, :image, :description, :price, :category");
+        $query->bindParam(':id', $data->getId());
+        $query->bindParam(':name', $data->getName());
+        $query->bindParam(':image', $data->getImage());
+        $query->bindParam(':description', $data->getDescription());
+        $query->bindParam(':price', $data->getPrice());
+        $query->bindParam(':category', $data->getCategory());
+        $query->execute();
       }
     } catch(Exception $ex) {
       throw new Exception($ex->getMessage());

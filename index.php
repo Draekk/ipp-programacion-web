@@ -79,7 +79,7 @@
       <ul class="dp-flex">
         <li><a href="/backend/views/categorias.html">Categorias</a></li>
         <li><a href="/backend/categorias.php">Lista Categorias</a></li>
-        <li><a href="/backend/views/productos.html">Productos</a></li>
+        <li><a href="/backend/productos.php">Productos</a></li>
         <li><a href="/backend/productos.php">Lista Productos</a></li>
       </ul>
     </nav>

@@ -16,7 +16,7 @@
         <ul class="dp-flex">
           <li><a href="/backend/views/categorias.html">Categorias</a></li>
           <li><a href="/backend/categorias.php">Lista Categorias</a></li>
-          <li><a href="/backend/views/productos.html">Productos</a></li>
+          <li><a href="/backend/productos.php">Productos</a></li>
           <li><a href="/backend/productos.php">Lista Productos</a></li>
         </ul>
       </nav>
@@ -26,7 +26,7 @@
       <form
         id="product"
         class="dp-flex ai-c jc-sa fd-c"
-        action=""
+        action="/backend/productos.php"
         method="POST"
       >
         <div class="form-label-container dp-flex ai-c jc-c fd-c">
@@ -67,9 +67,14 @@
             <label for="category"></label>
             <select name="productCategory" id="category" required>
               <option value="" disabled selected>Seleccionar categoría</option>
-              <option value="Categoria1">Categoría 1</option>
-              <option value="Categoria2">Categoría 2</option>
-              <option value="Categoria3">Categoría 3</option>
+              <?php foreach($data as $item):?>
+              <option
+                id="<?= $item->getId() ?>"
+                value="<?= strtoupper($item->getName()) ?>"
+              >
+                <?= strtoupper($item->getName()) ?>
+              </option>
+              <?php endforeach; ?>
             </select>
             <label for="price"></label>
             <input
@@ -95,12 +100,7 @@
     <div id="bg-disable" class="inactive dp-flex ai-c jc-c">
       <div id="alert-msg" class="dp-flex ai-c jc-c fd-c">
         <h2>Por favor, complete los campos:</h2>
-        <ul>
-          <!-- <li>ID</li>
-          <li>Nombre</li>
-          <li>Categoría</li>
-          <li>Precio</li> -->
-        </ul>
+        <ul></ul>
         <span id="name-alert">Gever Rodríguez</span>
       </div>
     </div>

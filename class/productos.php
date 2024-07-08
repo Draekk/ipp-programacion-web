@@ -10,7 +10,7 @@ class Producto {
   private $category;
 
   //Constructor
-  public function __construct($id, $name, $image, $description, $price, $category) {
+  public function __construct($id = null, $name = null, $image = null, $description = null, $price = null, $category = null) {
     $this->id = $id;
     $this->name = $name;
     $this->image = $image;
