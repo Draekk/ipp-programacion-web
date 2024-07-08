@@ -75,7 +75,7 @@
   ?>
   <header>
     <nav id="nav-bar" class="dp-flex ai-c jc-sb">
-      <h1>Tu Empresa</h1>
+      <h1 onclick="window.location.href = '/index.php';">ELITECH</h1>
       <ul class="dp-flex">
         <li><a href="/backend/views/categorias.html">Categorias</a></li>
         <li><a href="/backend/categorias.php">Lista Categorias</a></li>

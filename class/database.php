@@ -18,7 +18,7 @@ class Database {
 
   public function findAll($table) {
     try {
-      $query = $this->conn->query("SELECT * FROM " . $table);
+      $query = $this->conn->query("SELECT * FROM " . $table . " ORDER BY identificador ASC");
       $result = $query->fetchAll(PDO::FETCH_ASSOC);
       return $result;
     } catch (Exception $ex) {

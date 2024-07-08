@@ -1,0 +1,66 @@
+main {
+  height: 100%;
+  width: 100vw;
+}
+
+/* Table */
+
+.table-bg {
+  width: 50%;
+  height: 70%;
+  padding: 0 0.2rem;
+  background-color: var(--dark-shadow);
+  overflow: scroll;
+  border-radius: 2rem;
+  -webkit-box-reflect: below 0.1rem
+    linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+}
+
+.table-bg::-webkit-scrollbar {
+  display: none;
+}
+
+table {
+  align-self: flex-start;
+  width: 100%;
+  border-spacing: 0.1rem;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+}
+
+th {
+  border-radius: 0 0 0.5rem 0.5rem;
+  background-color: black;
+  color: white;
+  font-size: 2.5rem;
+  padding: 1rem;
+  min-width: 30rem;
+}
+
+th:nth-child(1) {
+  width: 30rem;
+}
+
+td {
+  border: solid 0.05rem var(--dark-shadow);
+  height: 2rem;
+  background-color: white;
+  color: black;
+  border-radius: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.4rem 0 0.4rem 0.2rem;
+  font-size: 2rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+tbody tr:hover td {
+  background-color: #1c008e;
+  font-weight: bold;
+  color: white;
+}

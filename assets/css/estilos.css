@@ -1,6 +1,7 @@
 :root {
   color-scheme: light dark;
   --white-shadow: rgba(255, 255, 255, 0.2);
+  --white-shadow-o50: rgba(255, 255, 255, 0.5);
   --dark-shadow: rgba(0, 0, 0, 0.9);
   --disabled-bg: rgba(254, 222, 222, 0.679);
   --btn-color-blue: rgb(78, 78, 255);
@@ -24,7 +25,8 @@ body {
       circle,
       transparent,
       rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.8) 100%
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.95) 100%
     ),
     url(/assets/img/logo_empresa.jpg);
   background-size: cover;
@@ -37,6 +39,9 @@ header {
   padding: 0 2rem;
   background-color: var(--dark-shadow);
   box-shadow: 0 0 2rem 0.5rem var(--dark-shadow);
+  width: 100vw;
+  position: absolute;
+  top: 0;
 }
 
 #nav-bar {
@@ -45,6 +50,7 @@ header {
 
 #nav-bar h1 {
   font-size: 3.6rem;
+  cursor: pointer;
 }
 
 #nav-bar ul {
@@ -55,6 +61,7 @@ header {
   text-decoration: none;
   display: inline-block;
   font-size: 1.8rem;
+  font-weight: bold;
   box-shadow: 0 0 1rem var(--white-shadow);
   margin: 0 1rem;
   padding: 2rem 0;
@@ -65,6 +72,9 @@ header {
 }
 
 #nav-bar a:hover {
-  background-color: var(--white-shadow);
+  background-color: var(--white-shadow-o50);
+  box-shadow: 0 0 1rem var(--white-shadow-o50),
+    0 0 2.5rem var(--white-shadow-o50), 0 0 8rem var(--white-shadow-o50);
+  color: black;
 }
 /* End of Nav Bar */

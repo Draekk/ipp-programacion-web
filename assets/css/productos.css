@@ -5,10 +5,11 @@ body {
 }
 
 main {
+  background-color: var(--dark-shadow);
   box-shadow: 0 0 0.5rem var(--white-shadow), 0 0 1.5rem var(--white-shadow),
     0 0 5rem var(--white-shadow);
   border-radius: 2rem;
-  padding: 4rem 3rem;
+  padding: 2rem 3rem;
   -webkit-box-reflect: below 0.1rem
     linear-gradient(transparent, rgba(0, 0, 0, 0.2));
 }
