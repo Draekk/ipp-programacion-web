@@ -2,8 +2,8 @@
 include "../class/autoload.php";
 
 $autoload = new Autoload();
-$database = $autoload->database;
-$product = $autoload->product;
+$database = $autoload->getDatabase();
+$product = $autoload->createProduct();
 
 switch($_SERVER['REQUEST_METHOD']) {
   case 'POST':
@@ -21,14 +21,6 @@ switch($_SERVER['REQUEST_METHOD']) {
       $product->setDescription($description);
       $product->setPrice($price);
       $product->setCategory($category);
-
-      echo $product->getId();
-      echo $product->getName();
-      echo $product->getImage();
-      echo $product->getDescription();
-      echo $product->getPrice();
-      echo $product->getCategory();
-
       $database->save($product);
       header("Location: ../index.php");
       exit();

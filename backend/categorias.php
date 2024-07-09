@@ -3,8 +3,8 @@
 include "../class/autoload.php";
 
 $autoload = new Autoload();
-$category = $autoload->category;
-$database = $autoload->database;
+$category = $autoload->createCategory();
+$database = $autoload->getDatabase();
 
 switch($_SERVER['REQUEST_METHOD']) {
   case 'POST':
