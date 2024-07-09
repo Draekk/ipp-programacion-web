@@ -6,16 +6,6 @@ $autoload = new Autoload();
 $category = $autoload->category;
 $database = $autoload->database;
 
-session_start();
-if(isset($_SESSION['json'])) {
-    $json = json_decode($_SESSION['json'], true);
-    if($json['forProducts']) {
-        $data = $json['data'];
-        include "./views/productos.html";
-        exit();
-    }
-}
-
 switch($_SERVER['REQUEST_METHOD']) {
     case 'POST':
         try {

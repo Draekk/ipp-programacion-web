@@ -1,31 +1,29 @@
 <?php
-include "./class/autoload.php";
-include "./class/productos.php";
+include "../class/autoload.php";
 
 $autoload = new Autoload();
 $database = $autoload->database;
+$product = $autoload->product;
 
 switch($_SERVER['REQUEST_METHOD']) {
   case 'POST':
     try {
       $id = $_POST['productId'];
-    $name = $_POST['productName'];
-    $img = $_POST['productImg'];
-    $description = $_POST['productDescription'];
-    $price = $_POST['productPrice'];
-    $category = $_POST['productCategory'];
+      $name = $_POST['productName'];
+      $img = $_POST['productImg'];
+      $description = $_POST['productDescription'];
+      $price = $_POST['productPrice'];
+      $category = $_POST['productCategory'];
 
-    $product = new Producto(
-      $id,
-      $name,
-      $img,
-      $description,
-      $price,
-      $category
-    );
-    $database->save($product);
-    header("Location: ../index.php");
-    exit();
+      $product->setId($id);
+      $product->setName($name);
+      $product->setImage($img);
+      $product->setDescription($description);
+      $product->setPrice($price);
+      $product->setCategory($category);
+      $database->save($product);
+      header("Location: ../index.php");
+      exit();
     } catch (Exception $ex) {
       throw new Exception($ex->getMessage());
     }
@@ -33,26 +31,24 @@ switch($_SERVER['REQUEST_METHOD']) {
 
   default:
     try {
-      $result = $database->findAll('productos');
-      redirectData($result, 'lista_productos.php');
+      if(isset($_GET['forProducts'])) {
+        createSession($database->findAll('categorias'), 'categories');
+        header('Location: load_categorias.php');
+        exit();
+      } else {
+        createSession($database->findAll('productos'), 'productos');
+        header('Location: lista_productos.php');
+        exit();
+      }
     } catch (Exception $ex) {
-        throw new Exception($ex->getMessage());
+      throw new Exception($ex->getMessage());
     }
     break;
 }
 
-function redirectData($data, $location = null) {
+function createSession($data, $nameData) {
   session_start();
-  
-  if($location) {
-    $_SESSION['json'] = json_encode($data);
-    header("Location: ". $location);
-  } else {
-    $jsonData = ["data" => $data, "forProducts" => true];
-    $_SESSION['json'] = json_encode($jsonData);
-    header("Location: categorias.php");
-  }
-  exit();
+  $_SESSION[$nameData] = json_encode($data);
 }
 
 

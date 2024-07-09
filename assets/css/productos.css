@@ -45,6 +45,10 @@ form {
   width: inherit;
 }
 
+.form-label-container #category {
+  font-size: 1.8rem;
+}
+
 .form-label-container textarea {
   font-family: sans-serif;
   min-width: 50rem;
