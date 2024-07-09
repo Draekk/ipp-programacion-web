@@ -54,7 +54,7 @@
           <input
             title="Imagen"
             type="file"
-            accept=".jpg, .jpeg, .png"
+            accept=".png"
             id="image"
             name="productImg"
           />
@@ -72,7 +72,7 @@
               <?php foreach($data as $item):?>
               <option
                 id="<?=$item['identificador']?>"
-                value="<?=strtoupper($item['nombre'])?>"
+                value="<?=strtoupper($item['identificador'])?>"
               >
                 <?=strtoupper($item['nombre'])?>
               </option>

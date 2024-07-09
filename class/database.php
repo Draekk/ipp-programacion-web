@@ -34,7 +34,7 @@ class Database {
         $query->bindParam(':name', $data->getName());
         $query->execute();
       } else {
-        $query = $this->conn->prepare("INSERT INTO productos (identificador, nombre, imagen, descripcion, precio, categoria) VALUES (:id, :name, :image, :description, :price, :category");
+        $query = $this->conn->prepare("INSERT INTO productos (identificador, nombre, imagen, descripcion, precio, categoria) VALUES (:id, :name, :image, :description, :price, :category)");
         $query->bindParam(':id', $data->getId());
         $query->bindParam(':name', $data->getName());
         $query->bindParam(':image', $data->getImage());
