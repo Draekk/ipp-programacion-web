@@ -32,13 +32,9 @@ switch($_SERVER['REQUEST_METHOD']) {
   default:
     try {
       if(isset($_GET['forProducts'])) {
-        createSession($database->findAll('categorias'), 'categories');
-        header('Location: load_categorias.php');
-        exit();
+        $autoload->createSession($database->findAll('categorias'), 'categories', 'load_categorias.php');
       } else {
-        createSession($database->findAll('productos'), 'productos');
-        header('Location: lista_productos.php');
-        exit();
+        $autoload->createSession($database->findAll('productos'), 'productos', 'lista_productos.php');
       }
     } catch (Exception $ex) {
       throw new Exception($ex->getMessage());
@@ -46,10 +42,7 @@ switch($_SERVER['REQUEST_METHOD']) {
     break;
 }
 
-function createSession($data, $nameData) {
-  session_start();
-  $_SESSION[$nameData] = json_encode($data);
-}
+
 
 
 ?>
