@@ -1,0 +1,28 @@
+main {
+  height: 100vh;
+}
+
+h2 {
+  font-size: 3.2rem;
+}
+
+.card-container {
+  border: solid 0.1rem white;
+  border-radius: 2rem;
+  width: 100rem;
+  height: 55rem;
+  margin: 1rem 0;
+  background-color: var(--dark-shadow);
+  padding: 2rem;
+}
+
+.card {
+  border: solid 0.1rem white;
+  border-radius: 1.5rem 1.5rem 0 0;
+  width: 20rem;
+  height: 25rem;
+}
+
+.desc-container {
+  margin: 0 0.5rem;
+}

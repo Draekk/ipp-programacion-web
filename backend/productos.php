@@ -34,7 +34,7 @@ switch($_SERVER['REQUEST_METHOD']) {
       if(isset($_GET['forProducts'])) {
         $autoload->createSession($database->findAll('categorias'), 'categories', 'load_categorias.php');
       } else {
-        $autoload->createSession($database->findAll('productos'), 'productos', 'lista_productos.php');
+        $autoload->createSession($database->findAll('productos'), 'products', 'lista_productos.php');
       }
     } catch (Exception $ex) {
       throw new Exception($ex->getMessage());

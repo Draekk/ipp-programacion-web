@@ -24,6 +24,14 @@
   justify-content: space-between;
 }
 
+.jc-fe {
+  justify-content: flex-end;
+}
+
+.fw-nowrap {
+  flex-wrap: nowrap;
+}
+
 .inactive {
   display: none;
 }
