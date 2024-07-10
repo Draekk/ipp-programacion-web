@@ -25,9 +25,36 @@
     <main class="dp-flex ai-c jc-fe fd-c">
       <h2>Productos</h2>
       <ul class="card-container dp-flex fw-wrap">
+        <?php foreach ($products as $product): ?>
         <li class="card dp-flex ai-c jc-sb fd-c">
+          <?php
+              // Convertir BLOB a base64
+              $imageData = $product['imagen'];
+              $image = base64_encode($imageData);
+              ?>
+          <picture class="dp-flex ai-c jc-c">
+            <img
+              src="data:image/png;base64, <?php echo $image; ?>"
+              alt="<?php echo htmlspecialchars($product['nombre']); ?>"
+            />
+          </picture>
+          <h3><?php echo htmlspecialchars($product['nombre']); ?></h3>
+          <div class="desc-container">
+            <p><?=$product['descripcion']?></p>
+          </div>
+          <p>
+            CLP
+            <?=$product['precio']?>
+          </p>
+          <span><?=$product['nombre_categoria']?></span>
+        </li>
+        <?php endforeach; ?>
+        <!-- <li class="card dp-flex ai-c jc-sb fd-c">
           <picture>
-            <img src="" alt="product-logo" />
+            <img
+              src="/assets/img/Captura de pantalla 2024-07-09 121832.png"
+              alt="product-logo"
+            />
           </picture>
           <h3>Producto 1</h3>
           <div class="desc-container">
@@ -40,71 +67,7 @@
           </div>
           <p>CLP 2.990</p>
           <span>Categoria</span>
-        </li>
-        <li class="card dp-flex ai-c jc-sb fd-c">
-          <picture>
-            <img src="" alt="product-logo" />
-          </picture>
-          <h3>Producto 1</h3>
-          <div class="desc-container">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum
-              alias ratione cupiditate, quibusdam mollitia modi sunt aliquam
-              dignissimos voluptas vel non harum id molestias voluptate
-              excepturi, nesciunt velit est maiores.
-            </p>
-          </div>
-          <p>CLP 2.990</p>
-          <span>Categoria</span>
-        </li>
-        <li class="card dp-flex ai-c jc-sb fd-c">
-          <picture>
-            <img src="" alt="product-logo" />
-          </picture>
-          <h3>Producto 1</h3>
-          <div class="desc-container">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum
-              alias ratione cupiditate, quibusdam mollitia modi sunt aliquam
-              dignissimos voluptas vel non harum id molestias voluptate
-              excepturi, nesciunt velit est maiores.
-            </p>
-          </div>
-          <p>CLP 2.990</p>
-          <span>Categoria</span>
-        </li>
-        <li class="card dp-flex ai-c jc-sb fd-c">
-          <picture>
-            <img src="" alt="product-logo" />
-          </picture>
-          <h3>Producto 1</h3>
-          <div class="desc-container">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum
-              alias ratione cupiditate, quibusdam mollitia modi sunt aliquam
-              dignissimos voluptas vel non harum id molestias voluptate
-              excepturi, nesciunt velit est maiores.
-            </p>
-          </div>
-          <p>CLP 2.990</p>
-          <span>Categoria</span>
-        </li>
-        <li class="card dp-flex ai-c jc-sb fd-c">
-          <picture>
-            <img src="" alt="product-logo" />
-          </picture>
-          <h3>Producto 1</h3>
-          <div class="desc-container">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum
-              alias ratione cupiditate, quibusdam mollitia modi sunt aliquam
-              dignissimos voluptas vel non harum id molestias voluptate
-              excepturi, nesciunt velit est maiores.
-            </p>
-          </div>
-          <p>CLP 2.990</p>
-          <span>Categoria</span>
-        </li>
+        </li> -->
       </ul>
     </main>
   </body>

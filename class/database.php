@@ -36,7 +36,11 @@ class Database {
   */
   public function findAll($table) {
     try {
-      $query = $this->conn->query("SELECT * FROM " . $table . " ORDER BY identificador ASC");
+      if($table === 'categorias') {
+        $query = $this->conn->query("SELECT * FROM " . $table . " ORDER BY identificador ASC");
+      } else {
+        $query = $this->conn->query("SELECT productos.identificador, productos.nombre, productos.imagen, productos.descripcion, productos.precio, categorias.nombre as nombre_categoria FROM " . $table . " JOIN categorias ON productos.categoria = categorias.identificador ORDER BY productos.identificador ASC");
+      }
       $result = $query->fetchAll(PDO::FETCH_ASSOC);
       return $result;
     } catch (Exception $ex) {
@@ -66,7 +70,7 @@ class Database {
         $query = $this->conn->prepare("INSERT INTO productos (identificador, nombre, imagen, descripcion, precio, categoria) VALUES (:id, :name, :image, :description, :price, :category)");
         $query->bindParam(':id', $data->getId());
         $query->bindParam(':name', $data->getName());
-        $query->bindParam(':image', $data->getImage());
+        $query->bindParam(':image', $data->getImage(), PDO::PARAM_LOB);
         $query->bindParam(':description', $data->getDescription());
         $query->bindParam(':price', $data->getPrice());
         $query->bindParam(':category', $data->getCategory());

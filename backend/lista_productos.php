@@ -3,7 +3,8 @@
 session_start();
 
 if(isset($_SESSION['products'])) {
-  $products = json_decode($_SESSION['products'], true);
+  $products = $_SESSION['products'];
 }
+
 include "./views/lista_productos.html";
 ?>
