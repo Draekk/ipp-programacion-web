@@ -1,4 +1,4 @@
-<?php
+<?php /* @autor Gever Rodríguez */
 
 class Producto {
 

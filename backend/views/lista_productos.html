@@ -23,7 +23,6 @@
       </nav>
     </header>
     <main class="dp-flex ai-c jc-fe fd-c">
-      <h2>Productos</h2>
       <ul class="card-container dp-flex fw-wrap">
         <?php foreach ($products as $product): ?>
         <li class="card dp-flex ai-c jc-sb fd-c">
@@ -34,19 +33,21 @@
               ?>
           <picture class="dp-flex ai-c jc-c">
             <img
-              src="data:image/png;base64, <?php echo $image; ?>"
-              alt="<?php echo htmlspecialchars($product['nombre']); ?>"
+              src="data:image/png;base64, <?= $image ?>"
+              alt="<?=strtolower($product['nombre']); ?>"
             />
           </picture>
-          <h3><?php echo htmlspecialchars($product['nombre']); ?></h3>
+          <h3><?=strtoupper($product['nombre']); ?></h3>
           <div class="desc-container">
             <p><?=$product['descripcion']?></p>
           </div>
-          <p>
-            CLP
-            <?=$product['precio']?>
-          </p>
-          <span><?=$product['nombre_categoria']?></span>
+          <div class="cp-container dp-flex ai-c jc-sb">
+            <span><?=ucfirst(strtolower($product['nombre_categoria']))?></span>
+            <p>
+              CLP
+              <?=number_format($product['precio'])?>
+            </p>
+          </div>
         </li>
         <?php endforeach; ?>
         <!-- <li class="card dp-flex ai-c jc-sb fd-c">

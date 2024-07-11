@@ -1,4 +1,4 @@
-<?php
+<?php /* @autor Gever Rodríguez */
 
 class Database {
 
@@ -39,7 +39,7 @@ class Database {
       if($table === 'categorias') {
         $query = $this->conn->query("SELECT * FROM " . $table . " ORDER BY identificador ASC");
       } else {
-        $query = $this->conn->query("SELECT productos.identificador, productos.nombre, productos.imagen, productos.descripcion, productos.precio, categorias.nombre as nombre_categoria FROM " . $table . " JOIN categorias ON productos.categoria = categorias.identificador ORDER BY productos.identificador ASC");
+        $query = $this->conn->query("SELECT productos.identificador, productos.nombre, productos.imagen, productos.descripcion, productos.precio, categorias.nombre as nombre_categoria FROM " . $table . " JOIN categorias ON productos.categoria = categorias.identificador ORDER BY productos.categoria ASC");
       }
       $result = $query->fetchAll(PDO::FETCH_ASSOC);
       return $result;

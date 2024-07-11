@@ -28,7 +28,7 @@ switch($_SERVER['REQUEST_METHOD']) {
       $product->setPrice($price);
       $product->setCategory($category);
       $database->save($product);
-      header("Location: ../index.php");
+      header("Location: ./productos.php");
       exit();
     } catch (Exception $ex) {
       throw new Exception($ex->getMessage());
@@ -52,8 +52,5 @@ switch($_SERVER['REQUEST_METHOD']) {
     }
     break;
 }
-
-
-
 
 ?>

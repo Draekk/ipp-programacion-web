@@ -1,4 +1,5 @@
-<?php
+<?php /* @autor Gever Rodríguez */
+
 include "../class/database.php";
 include "../class/categorias.php";
 include "../class/productos.php";

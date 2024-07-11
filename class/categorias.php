@@ -1,4 +1,4 @@
-<?php
+<?php /* @autor Gever Rodríguez */
 
 class Categoria {
 
@@ -28,6 +28,5 @@ class Categoria {
     $this->name = $name;
   }
 }
-
 
 ?>

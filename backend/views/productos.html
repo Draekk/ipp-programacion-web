@@ -75,7 +75,7 @@
                 id="<?=$item['identificador']?>"
                 value="<?=strtoupper($item['identificador'])?>"
               >
-                <?=strtoupper($item['nombre'])?>
+                <?=ucfirst(strtolower($item['nombre']))?>
               </option>
               <?php endforeach;?>
             </select>
