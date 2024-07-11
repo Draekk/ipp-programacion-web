@@ -25,8 +25,8 @@ El proyecto IPP consiste en desarrollar una aplicación web que permita a los us
 
 1. Clona este repositorio en tu entorno local.
 2. Crea una base de datos MySQL y ejecuta el script SQL que se encuentra en la carpeta `database`.
-3. Configura la conexión a la base de datos en el archivo `class/database.php`.
-4. Asegúrate de que el directorio `uploads` tenga permisos de escritura.
+3. Utiliza el comando `SOURCE /tu/ruta/database/db_query.sql` en la terminal de MYSQL.
+4. Configura la conexión a la base de datos en el archivo `class/database.php`.
 
 ## Uso
 
