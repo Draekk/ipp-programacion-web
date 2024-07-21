@@ -38,7 +38,7 @@ body {
 /* Nav Bar */
 header {
   height: 7rem;
-  padding: 0 2rem;
+  padding: 0 1rem;
   background-color: var(--dark-shadow);
   box-shadow: 0 0 2rem 0.5rem var(--dark-shadow);
   width: 100vw;
@@ -50,8 +50,21 @@ header {
   height: inherit;
 }
 
+#nav-bar picture {
+  height: 100%;
+  width: 6rem;
+  overflow: hidden;
+  border-radius: 1.2rem;
+}
+
+#nav-bar picture img {
+  width: 100%;
+}
+
 #nav-bar h1 {
-  font-size: 3.6rem;
+  margin-left: 0.5rem;
+  font-size: 5rem;
+  font-style: italic;
   cursor: pointer;
 }
 
