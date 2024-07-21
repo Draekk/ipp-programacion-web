@@ -29,53 +29,40 @@
       </nav>
     </header>
     <main class="dp-flex ai-c jc-fe fd-c">
-      <ul class="card-container dp-flex fw-wrap">
-        <?php foreach ($products as $product): ?>
-        <li class="card dp-flex ai-c jc-sb fd-c">
-          <?php
-              // Convertir BLOB a base64
-              $imageData = $product['imagen'];
-              $image = base64_encode($imageData);
-              ?>
-          <picture class="dp-flex ai-c jc-c">
-            <img
-              src="data:image/png;base64, <?= $image ?>"
-              alt="<?=strtolower($product['nombre']); ?>"
-            />
-          </picture>
-          <h3><?=strtoupper($product['nombre']); ?></h3>
-          <div class="desc-container">
-            <p><?=$product['descripcion']?></p>
-          </div>
-          <div class="cp-container dp-flex ai-c jc-sb">
-            <span><?=ucfirst(strtolower($product['nombre_categoria']))?></span>
-            <p>
-              CLP
-              <?=number_format($product['precio'])?>
-            </p>
-          </div>
-        </li>
-        <?php endforeach; ?>
-        <!-- <li class="card dp-flex ai-c jc-sb fd-c">
-          <picture>
-            <img
-              src="/assets/img/Captura de pantalla 2024-07-09 121832.png"
-              alt="product-logo"
-            />
-          </picture>
-          <h3>Producto 1</h3>
-          <div class="desc-container">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum
-              alias ratione cupiditate, quibusdam mollitia modi sunt aliquam
-              dignissimos voluptas vel non harum id molestias voluptate
-              excepturi, nesciunt velit est maiores.
-            </p>
-          </div>
-          <p>CLP 2.990</p>
-          <span>Categoria</span>
-        </li> -->
-      </ul>
+      <div class="table-bg">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>NOMBRE</th>
+              <th>DESCRIPCION</th>
+              <th>CATEGORIA</th>
+              <th>PRECIO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach($products as $p):?>
+            <tr>
+              <td title="<?=strtoupper($p['identificador'])?>">
+                <?=strtoupper($p['identificador'])?>
+              </td>
+              <td title="<?=strtoupper($p['nombre'])?>">
+                <?=strtoupper($p['nombre'])?>
+              </td>
+              <td title="<?=strtoupper($p['descripcion'])?>">
+                <?=strtoupper($p['descripcion'])?>
+              </td>
+              <td title="<?=strtoupper($p['nombre_categoria'])?>">
+                <?=strtoupper($p['nombre_categoria'])?>
+              </td>
+              <td title="<?=number_format($p['precio'])?>">
+                <?=number_format($p['precio'])?>
+              </td>
+            </tr>
+            <?php endforeach;?>
+          </tbody>
+        </table>
+      </div>
     </main>
   </body>
 </html>

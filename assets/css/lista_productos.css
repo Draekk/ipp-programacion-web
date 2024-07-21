@@ -1,76 +1,78 @@
 main {
-  height: 100vh;
+  height: 100%;
   width: 100vw;
 }
 
-.card-container {
-  border: solid 0.1rem white;
-  border-radius: 2rem;
-  width: 96.2rem;
-  height: 60rem;
-  margin: 1rem 0;
+/* Table */
+
+.table-bg {
+  width: 80%;
+  height: 80%;
+  padding: 0 0.2rem;
+  margin-bottom: 2rem;
   background-color: var(--dark-shadow);
-  padding: 2rem;
   overflow: scroll;
+  border-radius: 2rem;
+  -webkit-box-reflect: below 0.1rem
+    linear-gradient(transparent, rgba(0, 0, 0, 0.1));
 }
 
-.card {
-  border-radius: 1rem;
-  width: 20rem;
-  height: 25rem;
+.table-bg::-webkit-scrollbar {
+  display: none;
+}
+
+table {
+  align-self: flex-start;
+  width: 100%;
+  border-spacing: 0.1rem;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+}
+
+th {
+  border-radius: 0 0 0.5rem 0.5rem;
+  background-color: black;
+  color: white;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+th:nth-child(1) {
+  width: 8rem;
+}
+
+td:nth-child(2) {
+  max-width: 20rem;
+}
+
+td:nth-child(3) {
+  max-width: 35rem;
+}
+
+td:nth-child(4) {
+  max-width: 8rem;
+}
+
+td {
+  border: solid 0.05rem var(--dark-shadow);
+  height: 2rem;
+  background-color: white;
+  color: black;
+  border-radius: 0.8rem;
+  white-space: nowrap;
   overflow: hidden;
-  margin: 1rem 1.5rem;
-  background-color: var(--card-color);
-  box-shadow: 0 0 0.5rem var(--white-shadow), 0 0 1.5rem var(--white-shadow);
+  text-overflow: ellipsis;
+  padding: 0.4rem 0 0.4rem 0.2rem;
+  font-size: 2rem;
+  text-align: center;
   cursor: pointer;
 }
 
-.card picture {
-  width: 100%;
-  height: 14rem;
-  overflow: hidden;
-  border-bottom: solid 0.1rem var(--card-line-color);
-}
-
-.card picture img {
-  width: 100%;
-}
-
-.card h3 {
-  font-size: 1.4rem;
-  width: 100%;
-  text-align: center;
-  padding: 0.25rem 0;
-  margin: 0.25rem 0;
-  border-bottom: solid 0.1rem var(--card-line-color);
-}
-
-.desc-container {
-  margin: 0 0.5rem;
-  overflow: scroll;
-  height: 5rem;
-  border: solid 0.1rem var(--card-line-color);
-  border-radius: 0.5rem;
-  padding: 0 0.5rem;
-}
-
-.desc-container p {
-  font-size: 1.3rem;
-}
-
-.card .cp-container {
-  width: 100%;
-  padding: 0.5rem;
-}
-
-.card .cp-container > p {
-  font-size: 1.6rem;
-}
-
-.card .cp-container > span {
-  font-style: italic;
-}
-
-::-webkit-scrollbar {
-  display: none;
+tbody tr:hover td {
+  background-color: #1c008e;
+  font-weight: bold;
+  color: white;
 }

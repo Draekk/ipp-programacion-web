@@ -47,6 +47,15 @@ class Database {
       throw new Exception($ex->getMessage());
     }
   }
+  
+  public function findProductsOrderByCategories() {
+    try {
+      $query = $this->conn->query("SELECT productos.identificador, productos.nombre, productos.imagen, productos.descripcion, productos.precio, categorias.nombre as nombre_categoria FROM productos JOIN categorias ON productos.categoria = categorias.identificador ORDER BY productos.identificador ASC");
+      return $query->fetchAll(PDO::FETCH_ASSOC);
+    } catch (Exception $ex) {
+      throw new Exception($ex->getMessage());
+    }
+  }
 
   /**
   * Guarda un objeto de datos en la base de datos.

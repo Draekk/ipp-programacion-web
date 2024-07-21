@@ -42,7 +42,7 @@ switch($_SERVER['REQUEST_METHOD']) {
       } else {
         // $autoload->createSession($database->findAll('productos'), 'products', 'lista_productos.php');
         session_start();
-        $data = $database->findAll('productos');
+        $data = $database->findProductsOrderByCategories();
         $_SESSION['products'] = $data;
         header("Location: ./lista_productos.php");
         exit();
