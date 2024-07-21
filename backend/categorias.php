@@ -1,6 +1,6 @@
 <?php
 
-include "../class/autoload.php";
+require_once "../class/autoload.php";
 
 $autoload = new Autoload();
 $category = $autoload->createCategory();

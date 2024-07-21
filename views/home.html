@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/assets/css/estilos.css" />
     <link rel="stylesheet" href="/assets/css/display.css" />
     <link rel="stylesheet" href="/assets/css/index.css" />
+    <link rel="stylesheet" href="/assets/css/lista_productos.css" />
     <title>Index.php</title>
   </head>
   <body>
@@ -28,5 +29,54 @@
         </ul>
       </nav>
     </header>
+    <main class="dp-flex ai-c jc-fe fd-c">
+      <ul class="card-container dp-flex fw-wrap">
+        <?php foreach ($products as $product): ?>
+        <li class="card dp-flex ai-c jc-sb fd-c">
+          <?php
+                // Convertir BLOB a base64
+                $imageData = $product['imagen'];
+                $image = base64_encode($imageData);
+                ?>
+          <picture class="dp-flex ai-c jc-c">
+            <img
+              src="data:image/png;base64, <?= $image ?>"
+              alt="<?=strtolower($product['nombre']); ?>"
+            />
+          </picture>
+          <h3><?=strtoupper($product['nombre']); ?></h3>
+          <div class="desc-container">
+            <p><?=$product['descripcion']?></p>
+          </div>
+          <div class="cp-container dp-flex ai-c jc-sb">
+            <span><?=ucfirst(strtolower($product['nombre_categoria']))?></span>
+            <p>
+              CLP
+              <?=number_format($product['precio'])?>
+            </p>
+          </div>
+        </li>
+        <?php endforeach; ?>
+        <!-- <li class="card dp-flex ai-c jc-sb fd-c">
+            <picture>
+              <img
+                src="/assets/img/Captura de pantalla 2024-07-09 121832.png"
+                alt="product-logo"
+              />
+            </picture>
+            <h3>Producto 1</h3>
+            <div class="desc-container">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum
+                alias ratione cupiditate, quibusdam mollitia modi sunt aliquam
+                dignissimos voluptas vel non harum id molestias voluptate
+                excepturi, nesciunt velit est maiores.
+              </p>
+            </div>
+            <p>CLP 2.990</p>
+            <span>Categoria</span>
+          </li> -->
+      </ul>
+    </main>
   </body>
 </html>

@@ -1,8 +1,10 @@
 <?php /* @autor Gever Rodríguez */
 
-include "../class/database.php";
-include "../class/categorias.php";
-include "../class/productos.php";
+
+require_once __DIR__ . "/database.php";
+require_once __DIR__ . "/categorias.php";
+require_once __DIR__ . "/productos.php" ;
+
 class Autoload {
   private $database;
 
