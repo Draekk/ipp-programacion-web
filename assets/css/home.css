@@ -4,7 +4,8 @@ main {
 }
 
 .card-container {
-  border: solid 0.1rem white;
+  box-shadow: 0 0 0.5rem var(--white-shadow), 0 0 1.5rem var(--white-shadow),
+    0 0 5rem var(--white-shadow);
   border-radius: 2rem;
   width: 96.2rem;
   height: 60rem;
