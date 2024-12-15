@@ -27,6 +27,8 @@ El proyecto IPP consiste en desarrollar una aplicación web que permita a los us
 2. Crea una base de datos MySQL y ejecuta el script SQL que se encuentra en la carpeta `database`.
 3. Utiliza el comando `SOURCE /tu/ruta/database/db_query.sql` en la terminal de MYSQL.
 4. Configura la conexión a la base de datos en el archivo `class/database.php`.
+5. Levanta el servidor web utilizando el comando `php -S localhost:8000` en la terminal.
+6. Abre tu navegador web y accede a la dirección `http://localhost:8000` para ver la aplicación web.
 
 ## Uso
 
